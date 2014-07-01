@@ -4,7 +4,7 @@
 
 I love CoffeeScript because it simplifies programming (especially OO programming) with javascript. It's workable debugging it with lots of console.logs, but I'd like to use node-debug. I'd also like to get real line numbers from the CoffeeScript when an exception is thrown.
 
-1. Include CoffeeScript in a server-side Javascript project.
+1. Include CoffeeScript in a *server-side* Javascript project.
 2. Use CoffeeScript with node-inspector (breakpoints).
 3. Get an accurate stack trace when an exception is thrown.
 
