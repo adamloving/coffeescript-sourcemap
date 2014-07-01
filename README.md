@@ -1,4 +1,4 @@
-# CoffeeScript Source Maps Exploration
+# CoffeeScript Source Map Demo
 
 ## Goals
 
@@ -91,9 +91,10 @@ I can see the sourceMappingURL data, and I'm pretty sure the sourceMaps are corr
 
 Similar results with ```node debug register/start.js``` ... apparently node does [not yet support sourcemaps](https://github.com/joyent/node/issues/3712).
 
+### 4. requireCSWithMap
+
+Since gulp still generates .js that needs to be required using a temp path, I wrote my my own requireCSwithMap() to generate the map (using a temporary filename) then require the .temp.js. I also threw in source-map-support to prove that it works.
 
 ## Where to go from here?
 
-1. I wrote my my own requireCSwithMap() to generate the map (using a temporary filename) then require the .js
-
-2. Test gulp-source maps with temp directories and a simpler requireCSFromTemp() method so that .js and .map can be more hidden.
+I'm going to bounce #4 off a colleague, and see whether he prefers that approach (with .gitignored temp files). If not, I'll go back and attempt gulp source maps with temp directories and a simpler requireCSFromTemp() method so that .js and .map can be hidden/ignored.
