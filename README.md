@@ -63,7 +63,7 @@ This is great, because we can use gulp to watch for and compile CoffeeScript fil
 
 I'd also like to gitignore the compiled .js, but it has to stay there for when we require() it (or else we'd have to write some new convoluted require())
 
-_Todo: go back and test with '**/*.coffee' style blobs._
+_Todo: test with '**/*.coffee' style blobs._
 
 Note: I saw the includeContent flag which may come in handy later.
 
