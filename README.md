@@ -38,12 +38,14 @@ This is workable, but I need a way to make this part of my build process.
 
 ### 2. Compile using gulp
 
-The gulp-coffeescfript module proclaims to make source maps, but I couldn't get it to work without modifying the project. 
+The gulp-coffeescript module proclaims to make source maps, but I couldn't get it to work without modifying the project. 
 
 ```bash
 $ node gulped/compile.js
 $ ./node_modules/.bin/node-debug gulped/start.js
 ```
+
+Here's my [compile.js script](https://github.com/adamloving/coffeescript-sourcemap-demo/blob/master/gulped/compile.js).
 
 The map files didn't come out right. Due to a bug, sourceRoot is set to "/source/". So, webkit can't find them.
 
