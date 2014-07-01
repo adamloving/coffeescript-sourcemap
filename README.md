@@ -93,7 +93,19 @@ Similar results with ```node debug register/start.js``` ... apparently node does
 
 ### 4. requireCSWithMap
 
-Since gulp still generates .js that needs to be required using a temp path, I wrote my my own requireCSwithMap() to generate the map (using a temporary filename) then require the .temp.js. I also threw in source-map-support to prove that it works.
+Since gulp still generates .js that needs to be required using a temp path, I wrote my my own [requireCSwithMap()](https://github.com/adamloving/coffeescript-sourcemap-demo/blob/master/prerequire/requireCSWithMap.js) to generate the map (using a temporary filename) then require the .temp.js. I also threw in source-map-support to prove that it works.
+
+```
+var requireCSwithMap = require('./requireCSwithMap').requireCSwithMap;
+var b = requireCSwithMap('./include/b.coffee').b;
+```
+
+This works quite nicely.
+
+![require time source maps](https://www.evernote.com/shard/s3/sh/21399951-486c-4a13-98a0-8f3f7291e58b/81926c63959f93c8f4721eef79a82b6f/res/50813e4e-e69b-4f92-a73a-b62901c5a7ae/skitch.png)
+
+![source-map-support](https://www.evernote.com/shard/s3/sh/4e3c8b52-819a-47a4-8e07-8803aee81a64/ba10a7d536470a2ed2cb4b16c8dbac45/res/6d9f4261-6c63-40ca-8f99-d5f9393224ef/skitch.png)
+
 
 ## Where to go from here?
 
