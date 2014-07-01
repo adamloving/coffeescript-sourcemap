@@ -28,6 +28,7 @@
     "gulp-sourcemaps": "^0.4.1",
     "gulp-util": "^2.2.19",
     "node-debug": "^0.1.0",
-    "node-inspector": "^0.7.4"
+    "node-inspector": "^0.7.4",
+    "source-map-support": "^0.2.6"
   }
 }

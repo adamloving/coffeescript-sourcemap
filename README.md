@@ -17,6 +17,8 @@ require('mystuff.coffee')
 
 However, you need to generate **sourcemaps** to be able to map lines in the compiled Javascript to the original CoffeeScript lines.
 
+Looks like [node-source-map-support](https://github.com/evanw/node-source-map-support) is the solution to #3.
+
 ## Things I tried
 
 ### 1. Precompile CoffeeScript to js with maps
@@ -61,7 +63,7 @@ This is great, because we can use gulp to watch for and compile CoffeeScript fil
 
 I'd also like to gitignore the compiled .js, but it has to stay there for when we require() it (or else we'd have to write some new convoluted require())
 
-__Todo: go back and test with '**/*.coffee' style blobs__
+_Todo: go back and test with '**/*.coffee' style blobs._
 
 Note: I saw the includeContent flag which may come in handy later.
 
@@ -74,8 +76,24 @@ require('coffee-script/register')
 require('mystuff.coffee')
 ```
 
+Wouldn't it be cool if that generated the sourceMap?
+
 I noticed [the sourcemaps](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit) format has a ```sourcesContent``` element. I also noticed that ```sourceMappingURL`` at the bottom of the Javascript could be a data URI.
-It would be killer if the CoffeeScript require handler thing could build the map and slam it into the bottom of the JS. Something like this [loadFile function](https://github.com/GiantThinkwell/coffeescript/blob/91f820b619360eff78ff716e8520522908ae615e/lib/coffee-script/register.js).
+It would be killer if the CoffeeScript register loadFile function could build the map and slam it into the bottom of the JS. Something like this [loadFile function](https://github.com/GiantThinkwell/coffeescript/blob/91f820b619360eff78ff716e8520522908ae615e/lib/coffee-script/register.js).
+
+Unfortunately, it doesn't seem to work.
+
+```bash
+$ node register/start.js
+```
+
+I can see the sourceMappingURL data, and I'm pretty sure the sourceMaps are correct. But webkit isn't recognizing it. Presumably, by the time my loadFile function runs, node-debug has already primed the browser with the relevant maps, and new ones are not loaded.
+
+Similar results with ```node debug register/start.js``` ... apparently node does [not yet support sourcemaps](https://github.com/joyent/node/issues/3712).
 
 
+## Where to go from here?
 
+1. I wrote my my own requireCSwithMap() to generate the map (using a temporary filename) then require the .js
+
+2. Test gulp-source maps with temp directories and a simpler requireCSFromTemp() method so that .js and .map can be more hidden.

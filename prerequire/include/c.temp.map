@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "c.temp.js",
+  "sourceRoot": "",
+  "sources": [
+    "c.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,OAAA,CAAQ,oBAAR,CAA6B,CAAC,OAA9B,CAAA,CAAA,CAAA;;AAAA,EAEA,OAAO,CAAC,CAAR,GAAY,SAAA,GAAA;AACV,aAAA;AAAA,IACA,OAAO,CAAC,GAAR,CAAY,GAAZ,CADA,CAAA;AAEA,UAAU,IAAA,KAAA,CAAM,gCAAN,CAAV,CAHU;EAAA,CAFZ,CAAA;AAAA"
+}
