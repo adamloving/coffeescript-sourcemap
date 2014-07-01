@@ -55,7 +55,7 @@ The map files didn't come out right. Due to a bug, sourceRoot is set to "/source
 
 ![node-debug gulp sourcemap screenshot](https://www.evernote.com/shard/s3/sh/8fed77e3-d57a-44a8-b785-5f4c1a73c90a/9d7c50113ec8c60ef361ac31c88470b4/res/4097a84a-5628-4774-9e84-f0602f007d58/skitch.png)
 
-So, I modified the project to allow an empty string for sourceRoot, and voila!
+So, I modified the project to [allow an empty string for sourceRoot](https://github.com/GiantThinkwell/gulp-sourcemaps/commit/8a4ecd90b64db2d6d06948670d3139deef8a82d5), and voila!
 
 ![working sourcemaps](https://www.evernote.com/shard/s3/sh/2ad78e26-2932-40db-a959-0f0daa95b240/0f94b5a5a34ac50168651dc066f70873/res/9fa51908-8f7b-450e-807f-3dfa8ccce7b1/skitch.png)
 
