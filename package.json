@@ -1,0 +1,33 @@
+{
+  "name": "coffeescript-sourcemap-test",
+  "version": "0.0.1",
+  "description": "Test project for server-side Coffee script source maps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adamloving/coffeescript-sourcemap.git"
+  },
+  "keywords": [
+    "coffeescript",
+    "sourcemap",
+    "gulp"
+  ],
+  "author": "Adam Loving (@adamloving)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamloving/coffeescript-sourcemap/issues"
+  },
+  "homepage": "https://github.com/adamloving/coffeescript-sourcemap",
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "gulp": "^3.8.5",
+    "gulp-coffee": "^2.0.1",
+    "gulp-sourcemaps": "^0.4.1",
+    "gulp-util": "^2.2.19",
+    "node-debug": "^0.1.0",
+    "node-inspector": "^0.7.4"
+  }
+}
