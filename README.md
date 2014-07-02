@@ -83,7 +83,7 @@ Wouldn't it be cool if that generated the sourceMap?
 I noticed [the sourcemaps](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit) format has a ```sourcesContent``` element. I also noticed that ```sourceMappingURL`` at the bottom of the Javascript could be a data URI.
 It would be killer if the CoffeeScript register loadFile function could build the map and slam it into the bottom of the JS. Something like this [loadFile function](https://github.com/GiantThinkwell/coffeescript/blob/91f820b619360eff78ff716e8520522908ae615e/lib/coffee-script/register.js).
 
-Unfortunately, it doesn't seem to work.
+Unfortunately, it [doesn't seem to work](https://github.com/node-inspector/node-inspector/issues/401).
 
 ```bash
 $ node register/start.js
